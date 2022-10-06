@@ -26,7 +26,7 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
-  private final NOTDriveCommand m_DriveCommand = new NOTDriveCommand(m_NOTDriveSubsystem, () -> m_controller.getRightY(), () -> m_controller.getLeftY());
+  private final NOTDriveCommand m_DriveCommand = new NOTDriveCommand(m_NOTDriveSubsystem, () -> m_controller.getRightY(), () -> m_controller.getLeftY(), () -> m_controller.getRightBumper()) ;
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {

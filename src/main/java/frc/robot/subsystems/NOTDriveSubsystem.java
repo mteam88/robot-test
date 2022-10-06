@@ -14,9 +14,15 @@ public class NOTDriveSubsystem extends SubsystemBase {
   TalonSRX lMotor = new TalonSRX(3);
   TalonSRX rMotor = new TalonSRX(4);
 
-  public void setMotors(double lMotorSpeed, double rMotorSpeed) {
-    lMotor.set(TalonSRXControlMode.PercentOutput, lMotorSpeed*0.25);
-    rMotor.set(TalonSRXControlMode.PercentOutput, rMotorSpeed*0.25);
+  public void setMotors(double lMotorSpeed, double rMotorSpeed, Boolean isSpeedMode) {
+    System.out.println(isSpeedMode);
+    if (isSpeedMode) {
+      lMotor.set(TalonSRXControlMode.PercentOutput, lMotorSpeed*0.35);
+      rMotor.set(TalonSRXControlMode.PercentOutput, rMotorSpeed*0.35);
+    } else {
+      lMotor.set(TalonSRXControlMode.PercentOutput, lMotorSpeed*0.15);
+      rMotor.set(TalonSRXControlMode.PercentOutput, rMotorSpeed*0.15);
+    }
   }
 
   /** Creates a new ExampleSubsystem. */
