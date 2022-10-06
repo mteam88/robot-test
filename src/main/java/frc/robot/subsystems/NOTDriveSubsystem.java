@@ -20,8 +20,8 @@ public class NOTDriveSubsystem extends SubsystemBase {
       lMotor.set(TalonSRXControlMode.PercentOutput, lMotorSpeed*0.35);
       rMotor.set(TalonSRXControlMode.PercentOutput, rMotorSpeed*0.35);
     } else {
-      lMotor.set(TalonSRXControlMode.PercentOutput, lMotorSpeed*0.15);
-      rMotor.set(TalonSRXControlMode.PercentOutput, rMotorSpeed*0.15);
+      lMotor.set(TalonSRXControlMode.PercentOutput, lMotorSpeed*0.25);
+      rMotor.set(TalonSRXControlMode.PercentOutput, rMotorSpeed*0.25);
     }
   }
 
