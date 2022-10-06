@@ -16,18 +16,18 @@ public class NOTDriveCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final NOTDriveSubsystem m_subsystem;
   private final DoubleSupplier left, right;
-  private final BooleanSupplier aButton;
+  private final BooleanSupplier speedMode;
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public NOTDriveCommand(NOTDriveSubsystem subsystem, DoubleSupplier left, DoubleSupplier right, BooleanSupplier aButton) {
+  public NOTDriveCommand(NOTDriveSubsystem subsystem, DoubleSupplier left, DoubleSupplier right, BooleanSupplier speedMode) {
     m_subsystem = subsystem;
     this.left = left;
     this.right = right;
-    this.aButton = aButton;
+    this.speedMode = speedMode;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -41,7 +41,7 @@ public class NOTDriveCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_subsystem.setMotors(left.getAsDouble(), -right.getAsDouble(), aButton.getAsBoolean());
+    m_subsystem.setMotors(left.getAsDouble(), -right.getAsDouble(), speedMode.getAsBoolean());
   }
 
   // Called once the command ends or is interrupted.
